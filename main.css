@@ -9,11 +9,7 @@ background-color: blue;
   background-color: orange;
 
 }
-.make-it-pretty{
-  width:50%;
-  display:flex;
-  flex-wrap:wrap;
-}
+
 .makeitsmall{
   width:50%;
 }
