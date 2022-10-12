@@ -1,0 +1,19 @@
+.button1{
+background-color: blue;
+}
+.button2{
+  background-color: red;
+
+}
+.button3{
+  background-color: orange;
+
+}
+#color{
+  display:flex;
+  flex-wrap:wrap;
+  
+}
+.makeitsmall{
+  width:50%;
+}
