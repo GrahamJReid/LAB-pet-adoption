@@ -245,7 +245,7 @@ const pets = [
 
 for (let i=0;i<pets.length;i++){
 let petColor = document.querySelector("#color");
-petColor.innerHTML += `<div class="card" style="width: 18rem;">
+petColor.innerHTML += `<div class="card cards" style="width: 18rem;">
 <div class="card-body">
   <h5 class="card-title">${pets[i].name}</h5>
   <h6>${pets[i].specialSkill}</h6>
