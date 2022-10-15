@@ -252,7 +252,8 @@ for (let i=0;i<pets.length;i++){
   <img class="makeitsmall" src=${pets[i].imageUrl}>
   
   </div>
-  </div>`};
+  </div>`}
+  
 
 const renderToDom = (thisOne, htmlToRender) => {
     const selectedDiv = document.querySelector(thisOne);
