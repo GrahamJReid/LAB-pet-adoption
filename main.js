@@ -244,14 +244,60 @@ const pets = [
 //const app = document.querySelector("#app");
 
 for (let i=0;i<pets.length;i++){
-let petColor = document.querySelector("#color");
-petColor.innerHTML += `<div class="card cards" style="width: 18rem;">
-<div class="card-body">
-  <h5 class="card-title">${pets[i].name}</h5>
-  <h6>${pets[i].specialSkill}</h6>
-<img class="makeitsmall" src=${pets[i].imageUrl}>
+  let petColor = document.querySelector("#thisOne");
+  petColor.innerHTML += `<div class="card cards" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">${pets[i].name}</h5>
+    <h6>${pets[i].specialSkill}</h6>
+  <img class="makeitsmall" src=${pets[i].imageUrl}>
+  
+  </div>
+  </div>`};
 
-</div>
-</div>`
- 
-}
+const renderToDom = (thisOne, htmlToRender) => {
+    const selectedDiv = document.querySelector(thisOne);
+    selectedDiv.innerHTML = htmlToRender;
+  };
+  const cardsOnDom = (pets) => {
+    let domString = "";
+    for (const member of pets) {
+      domString += `<div class="card" style="width: 18rem;">
+      <img src="${member.imageUrl}" class="card-img-top" alt="...">
+      <div class="card-body">
+        <p class="card-text">${member.name}</p>
+      </div>
+    </div>`;
+    }
+  
+    renderToDom("#thisOne", domString);
+  }
+  const filter = (array, colorString) => {
+    const colorArray = [];
+
+    for (const member of array) {
+      if (member.color === colorString) {
+        colorArray.push(member);
+      }
+    }
+  
+    return colorArray;
+  }
+
+  const showAllButton = document.querySelector("#allPets");
+const showBrownButton = document.querySelector("#brownButton");
+const showRedButton = document.querySelector("#redButton");
+
+showAllButton.addEventListener('click', () => {
+  cardsOnDom(pets);
+});
+
+showBrownButton.addEventListener('click', () => {
+  const brownPets = filter(pets, 'Brown');
+  cardsOnDom(brownPets);
+  console.log('does this work');
+});
+showRedButton.addEventListener('click', () => {
+  const redPets = filter(pets, 'Red');
+  cardsOnDom(redPets);
+  console.log('does this work');
+});
