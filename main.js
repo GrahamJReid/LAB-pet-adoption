@@ -243,7 +243,7 @@ const pets = [
   //console.log('hello');
 //const app = document.querySelector("#app");
 
-for (let i=0;i<pets.length;i++){
+/*for (let i=0;i<pets.length;i++){
   let petColor = document.querySelector("#thisOne");
   petColor.innerHTML += `<div class="card cards" style="width: 18rem;">
   <div class="card-body">
@@ -252,7 +252,21 @@ for (let i=0;i<pets.length;i++){
   <img class="makeitsmall" src=${pets[i].imageUrl}>
   
   </div>
-  </div>`}
+  </div>`}*/
+  for (const member of pets) {
+    let petColor = document.querySelector('#thisOne');
+    petColor.innerHTML +=`<div class="card" style="width: 18rem;">
+    <img src="${member.imageUrl}" class="card-img-top" alt="...">
+    <div class="card-body">
+      <p class="card-text">${member.id}</p>
+      <p class="card-text">${member.name}</p>
+      <p class="card-text">${member.color}</p>
+      <p class="card-text">${member.specialSkill}</p>
+      <p class="card-text">${member.type}</p>
+      
+    </div>
+  </div>`;
+  }
   
 
 const renderToDom = (thisOne, htmlToRender) => {
@@ -265,40 +279,44 @@ const renderToDom = (thisOne, htmlToRender) => {
       domString += `<div class="card" style="width: 18rem;">
       <img src="${member.imageUrl}" class="card-img-top" alt="...">
       <div class="card-body">
+        <p class="card-text">${member.id}</p>
         <p class="card-text">${member.name}</p>
+        <p class="card-text">${member.color}</p>
+        <p class="card-text">${member.specialSkill}</p>
+        <p class="card-text">${member.type}</p>
+        
       </div>
     </div>`;
     }
-  
     renderToDom("#thisOne", domString);
   }
-  const filter = (array, colorString) => {
-    const colorArray = [];
+  const filter = (array, type) => {
+    const typeArray = [];
 
     for (const member of array) {
-      if (member.color === colorString) {
-        colorArray.push(member);
+      if (member.type === type) {
+        typeArray.push(member);
       }
     }
   
-    return colorArray;
+    return typeArray;
   }
 
   const showAllButton = document.querySelector("#allPets");
-const showBrownButton = document.querySelector("#brownButton");
-const showRedButton = document.querySelector("#redButton");
+const showBrownButton = document.querySelector("#catButton");
+const showDogButton = document.querySelector("#dogButton");
 
 showAllButton.addEventListener('click', () => {
   cardsOnDom(pets);
 });
 
 showBrownButton.addEventListener('click', () => {
-  const brownPets = filter(pets, 'Brown');
-  cardsOnDom(brownPets);
+  const catPets = filter(pets, 'cat');
+  cardsOnDom(catPets);
   console.log('does this work');
 });
-showRedButton.addEventListener('click', () => {
-  const redPets = filter(pets, 'Red');
-  cardsOnDom(redPets);
+showDogButton.addEventListener('click', () => {
+  const dogPets = filter(pets, 'dog');
+  cardsOnDom(dogPets);
   console.log('does this work');
 });

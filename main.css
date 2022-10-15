@@ -9,7 +9,7 @@ background-color: blue;
   background-color: orange;
 
 }
-#color{
+#thisOne{
   display:flex;
   flex-wrap:wrap;
   
