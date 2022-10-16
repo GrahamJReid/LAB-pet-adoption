@@ -321,10 +321,10 @@ showDogButton.addEventListener('click', () => {
   console.log('does this work');
 });
 /////////////create part 4//////////////////////////
-/*const form = document.querySelector("#petForm");
+const form = document.querySelector("#petForm");
 
-const newPet = (Event) = {
-  Event.preventDefault();
+const newPet = function(event) {
+  event.preventDefault();
 const Obj = {
   id:pets.length + 1,
   name:document.querySelector("#name").value,
@@ -338,4 +338,4 @@ cardsOnDom(pets);
 form.reset();
 }
 
-form.addEventListener('submit',newPet);*/
+form.addEventListener('submit',newPet);
