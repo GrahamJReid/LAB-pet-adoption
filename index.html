@@ -13,8 +13,44 @@
     <button id="dogButton">Dogs</button>
     <button id="catButton">Cats</button>
     <button id="allPets">All Pets</button>
+    <button id="toForm"><a href="form.html">Form</a></button>
+
+    <body class="form-body">
+      <button><a href="index.html">Back to main</a></button>
+    
+      <form id="petForm">
+        <div class="form-group">
+          <label for="id">ID</label>
+          <input type="text" class="form-control" id="id" placeholder="ID">
+        </div>
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" class="form-control" id="name" placeholder="Name">
+        </div>
+        <div class="form-group">
+          <label for="color">Color</label>
+          <input type="text" class="form-control" id="color" placeholder="Color">
+        </div>
+        <div class="form-group">
+          <label for="specialSkill">Special Skill</label>
+          <input type="text" class="form-control" id="specialSkill" placeholder="Special Skill">
+        </div>
+        <div class="form-group">
+          <label for="type">Type</label>
+          <input type="text" class="form-control" id="type" placeholder="Type">
+        </div>
+        <div class="form-group">
+          <label for="img">Picture URL</label>
+          <input type="text" class="form-control" id="img" placeholder="Image">
+        </div>
+        
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    
+
     <div id="app">pets</div>
     <div class="flex-card" id="thisOne"></div>
+
 
 
 
@@ -27,5 +63,6 @@
 
     <script src="main.js"></script>
     <script src="iteration.js"></script>
+    
   </body>
   </html>

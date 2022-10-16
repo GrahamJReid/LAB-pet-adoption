@@ -269,8 +269,8 @@ const pets = [
   }
   
 
-const renderToDom = (thisOne, htmlToRender) => {
-    const selectedDiv = document.querySelector(thisOne);
+const renderToDom = (bob, htmlToRender) => {
+    const selectedDiv = document.querySelector(bob);
     selectedDiv.innerHTML = htmlToRender;
   };
   const cardsOnDom = (pets) => {
@@ -320,3 +320,22 @@ showDogButton.addEventListener('click', () => {
   cardsOnDom(dogPets);
   console.log('does this work');
 });
+/////////////create part 4//////////////////////////
+/*const form = document.querySelector("#petForm");
+
+const newPet = (Event) = {
+  Event.preventDefault();
+const Obj = {
+  id:pets.length + 1,
+  name:document.querySelector("#name").value,
+  color:document.querySelector("#color").value,
+  specialSkill:document.querySelector("#specialSkill").value,
+  type:document.querySelector("#type").value,
+  imageUrl:document.querySelector("#img").value
+}
+pets.push(Obj);
+cardsOnDom(pets);
+form.reset();
+}
+
+form.addEventListener('submit',newPet);*/
