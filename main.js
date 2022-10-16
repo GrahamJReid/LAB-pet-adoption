@@ -253,7 +253,7 @@ const pets = [
   
   </div>
   </div>`}*/
-  for (const member of pets) {
+  /*for (const member of pets) {
     let petColor = document.querySelector('#thisOne');
     petColor.innerHTML +=`<div class="card" style="width: 18rem;">
     <img src="${member.imageUrl}" class="card-img-top" alt="...">
@@ -266,7 +266,7 @@ const pets = [
       
     </div>
   </div>`;
-  }
+  }*/
   
 
 const renderToDom = (bob, htmlToRender) => {
@@ -284,6 +284,7 @@ const renderToDom = (bob, htmlToRender) => {
         <p class="card-text">${member.color}</p>
         <p class="card-text">${member.specialSkill}</p>
         <p class="card-text">${member.type}</p>
+        <button id="delete">Delete</button>
         
       </div>
     </div>`;
@@ -301,7 +302,7 @@ const renderToDom = (bob, htmlToRender) => {
   
     return typeArray;
   }
-
+cardsOnDom(pets);
   const showAllButton = document.querySelector("#allPets");
 const showBrownButton = document.querySelector("#catButton");
 const showDogButton = document.querySelector("#dogButton");
@@ -339,3 +340,21 @@ form.reset();
 }
 
 form.addEventListener('submit',newPet);
+////////////////////DELETE/////////////////
+
+const app = document.querySelector("#thisOne");
+app.addEventListener('click', (e) => {
+  if (e.target.id.includes("delete")) {
+    const [, id] = e.target.id.split("--");
+
+    const index = pets.findIndex(e => e.id === Number(id));
+    pets.splice(index, 1);
+    cardsOnDom(pets);
+  }
+});
+const startApp = () => {
+  cardsOnDom(pets);
+  events(); // ALWAYS LAST
+}
+
+startApp();
