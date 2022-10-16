@@ -1,3 +1,9 @@
+body{
+  background:black;
+}
+.form-body{
+  background-color: aqua;
+}
 #dogButton{
 background-color: blue;
 }
@@ -8,6 +14,9 @@ background-color: blue;
 #allPets{
   background-color: orange;
 
+}
+#toForm{
+  background-color:aqua;
 }
 #thisOne{
   display:flex;
