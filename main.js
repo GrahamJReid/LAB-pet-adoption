@@ -303,6 +303,7 @@ const renderToDom = (bob, htmlToRender) => {
     return typeArray;
   }
 cardsOnDom(pets);
+
   const showAllButton = document.querySelector("#allPets");
 const showBrownButton = document.querySelector("#catButton");
 const showDogButton = document.querySelector("#dogButton");
