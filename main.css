@@ -26,3 +26,18 @@ background-color: blue;
 .makeitsmall{
   width:50%;
 }
+h1{
+  color:white;
+  box-shadow:5px 5px 5px ;
+  border:solid white 3px;
+  border-radius:25px;
+  padding:10px;
+  text-align:center;
+  margin:5px;
+}
+.submit-button{
+  background-color:black;
+  color:white;
+  border:solid white 1px;
+  margin:5px;
+}
